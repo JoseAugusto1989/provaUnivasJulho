@@ -2,8 +2,21 @@
 
 <h2>Categoria </h2>
 
-<div>
-  <h2>Nova musica:</h2>
-  <label >Nome:</label>
-  <input>
+<div *ngFor="let lib of libraryList">
+  <div><a routerLink="/list" >
+    {{ lib.id }}
+    {{ lib.name }}
+    </a>
+  </div>
 </div>
+
+<form #myForm="ngForm" (submit)="saveData(myForm)">
+  <h4>
+    Nova categoria:
+  </h4>
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="nome" [(ngModel)]="newLibrary">
+    <input type="submit" value="Salvar">
+  </div>
+</form>

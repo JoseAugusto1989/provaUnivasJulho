@@ -1,4 +1,7 @@
+import { NgForm } from '@angular/forms';
+import { LibraryService } from './library.service';
 import { Component, OnInit } from '@angular/core';
+import {Library} from '../library/library'
 
 @Component({
   selector: 'app-library',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibraryComponent implements OnInit {
 
-  constructor() { }
+  libraryList: Library [] = []
+  newLibrary: Library = {} as Library
+
+  constructor(private service: LibraryService) { }
 
   ngOnInit(): void {
+  }
+
+  saveData(form: NgForm) {
+    this.service.getList(this.newLibrary).subscribe(item => {
+      form.resetForm()
+      this.newLibrary = {} as Library
+      this.loadData()
+    })
+  }
+
+  loadData() {
+    this.service.getList().subscribe(items => {
+      this.libraryList = items
+    })
   }
 
 }
