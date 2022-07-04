@@ -4,20 +4,20 @@
     <thead>
       <tr>
         <h2>Categorias</h2>
-        <button onclick="samba">Samba</button>
-        <button onclick="mpb">MPB</button>
-        <button onclick="rock">Rock</button>
-        <button onclick="pagode">Pagode</button>
-        <button onclick="sertanejo">Sertanejo</button>
-        <button onclick="forro">Forró</button>
+        <p>Samba:</p>
+        <p>MPB:</p>
+        <p>Rock:</p>
+        <p>Pagode:</p>
+        <p>Sertanejo:</p>
+        <p>Forró:</p>
       </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let music of lista">
+      <tr *ngFor="let music of list">
         <td>{{ music.id }}</td>
-        <td>{{ music.name }}</td>
-        <td>{{ music.style }}</td>
+        <td>{{ music.filename }}</td>
+        <td>{{ music.category_id }}</td>
       </tr>
     </tbody>
   </table>
@@ -28,7 +28,7 @@
 
     <div>
       <label>Nome: </label>
-      <input type="text" value="music"  [(ngModel)]="newList.name">
+      <input type="text" value="music"  [(ngModel)]="newList.filename">
       <input type="submit" value="Salvar">
       <a routerLink="/library">Categorias:</a>
     </div>

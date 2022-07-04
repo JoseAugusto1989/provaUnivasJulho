@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class LibraryService {
 
-  private serverApi = 'https://music-api-2022.herokuapp.com/'
+  private serverApi = 'https://music-api-2022.herokuapp.com/documentation'
 
 
   constructor(private httpClient: HttpClient) { }
