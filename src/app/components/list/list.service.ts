@@ -17,7 +17,7 @@ export class ListService {
     return this.httpClient.get<List[]>(this.serverApi)
   }
 
-  postCategoria(list: List): Observable<List[]>{
+  postList(list: List): Observable<List[]>{
     return this.httpClient.post<List[]>(this.serverApi, list)
   }
 }

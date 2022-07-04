@@ -19,7 +19,7 @@ export class LibraryComponent implements OnInit {
   }
 
   saveData(form: NgForm) {
-    this.service.getList(this.newLibrary).subscribe(item => {
+    this.service.postLibrary(this.newLibrary).subscribe(item => {
       form.resetForm()
       this.newLibrary = {} as Library
       this.loadData()

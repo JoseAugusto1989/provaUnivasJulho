@@ -18,7 +18,7 @@ export class LibraryService {
     return this.httpClient.get<Library[]>(this.serverApi)
   }
 
-  createCategoria(lib: Library): Observable<Library>{
+  postLibrary(lib: Library): Observable<Library>{
     return this.httpClient.post<Library>(this.serverApi, lib)
   }
 }
