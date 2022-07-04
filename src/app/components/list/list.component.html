@@ -1,0 +1,36 @@
+<div>
+  <h1>Minha Biblioteca de musicas:</h1>
+  <table>
+    <thead>
+      <tr>
+        <h2>Categorias</h2>
+        <button onclick="samba">Samba</button>
+        <button onclick="mpb">MPB</button>
+        <button onclick="rock">Rock</button>
+        <button onclick="pagode">Pagode</button>
+        <button onclick="sertanejo">Sertanejo</button>
+        <button onclick="forro">Forró</button>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let music of lista">
+        <td>{{ music.id }}</td>
+        <td>{{ music.name }}</td>
+        <td>{{ music.style }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+    <div>
+      <h2>Nova Categoria: </h2>
+    </div>
+
+    <div>
+      <label>Nome: </label>
+      <input type="text" value="music"  [(ngModel)]="newList.name">
+      <input type="submit" value="Salvar">
+      <a routerLink="/library">Categorias:</a>
+    </div>
+
+</div>
