@@ -1,20 +1,25 @@
 <h1>Minha Biblioteca de musicas:</h1>
 
-<div *ngFor="let lib of libraryList">
-  <div>
-    <h2>Categoria: </h2>
-    {{ lib.name }}
+<form #myForm="ngForm" (submit)="loadData()">
+  <div *ngFor="let lib of libraryList">
+    <div>
+      <h2>Categoria: </h2>
+      {{ lib.name }}
+    </div>
   </div>
-</div>
+</form>
 
 <form #myForm="ngForm" (submit)="saveData(myForm)">
 
   <div>
-    <h4>
-      Nova musica:
-    </h4>
     <label>Nome:</label>
     <input type="text" name="nome" [(ngModel)]="newLibrary">
     <input type="submit" value="Salvar">
+
+    <tr *ngFor="let library of libraryList">
+      <td>
+        Nova musica:
+        {{ library.name }}
+      </td>
   </div>
 </form>
